@@ -1,0 +1,8 @@
+@for (item of items; track $index) {
+    <div>
+        {{ depth | delimetr }}{{ item.name }}
+        @if(item.children.length){
+            <app-solar-arc-items-renderer [items]="getMutableArray(item.children)" [depth]="depth + 1"></app-solar-arc-items-renderer>
+        }
+    </div>
+}
